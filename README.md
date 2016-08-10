@@ -77,17 +77,33 @@ dokku storage:mount $app_name /var/lib/dokku/data/storage/$app_name:/app/public/
 # domain
 
 # add a domain to an app
-dokku domains:add myapp example.com
+dokku domains:add app_name example.com
 
 # list custom domains for app
-dokku domains myapp
+dokku domains app_name
 
 # clear all custom domains for app
-dokku domains:clear myapp
+dokku domains:clear app_name
 
 # remove a custom domain from app
-dokku domains:remove myapp example.com
+dokku domains:remove app_name example.com
 
 # postgres import dump
 dokku postgres:connect db_name < your_dump
+```
 
+# Cron jobs:
+run:
+
+```
+sudo crontab -e
+```
+
+Edit file:
+
+```bash
+PATH=/usr/local/bin:/usr/bin:/bin
+SHELL=/bin/bash
+
+* * * * * /bin/bash -c 'dokku run app_name rails r AppModel.run_something'
+```
