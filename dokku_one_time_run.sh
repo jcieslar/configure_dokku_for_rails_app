@@ -19,10 +19,6 @@ ssh root@$ip_vps << EOF
   echo "/mnt/swap_file.swap none swap sw 0 0" >> /etc/fstab
 
   ######### Plugins #########
-  # deploy hooks
-  cd /var/lib/dokku/plugins
-  git clone https://github.com/mlomnicki/dokku-deploy-hooks deploy-hooks
-  cd
 
   # postgres
   dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres
