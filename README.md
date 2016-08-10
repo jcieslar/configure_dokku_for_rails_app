@@ -1,4 +1,4 @@
-# Configure dokku for rails app with Postgesql DB.
+# Configure dokku for rails app with Postgresql DB.
 
 Bash script for configuring dokku for rails app on VPS like Digital Ocean.
 
@@ -87,4 +87,7 @@ dokku domains:clear myapp
 
 # remove a custom domain from app
 dokku domains:remove myapp example.com
+
+# postgres import dump
+dokku postgres:connect db_name < your_dump
 
