@@ -89,7 +89,15 @@ dokku domains:clear app_name
 dokku domains:remove app_name example.com
 
 # postgres import dump
-dokku postgres:connect db_name < your_dump
+dokku postgres:import db_name < your_dump
+
+# SSL with letsencrypt
+# Add to `/etc/hosts` new line: `192.192.8.8 example.com`
+
+dokku config:set --no-restart my-rails-app DOKKU_LETSENCRYPT_EMAIL=your@email.com
+dokku letsencrypt app_name
+dokku letsencrypt:auto-renew app_name
+dokku letsencrypt:cron-job --add app_name
 ```
 
 # Cron jobs:

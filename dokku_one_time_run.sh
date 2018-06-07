@@ -22,4 +22,5 @@ ssh root@$ip_vps << EOF
 
   # postgres
   dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres
+  dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
 EOF
