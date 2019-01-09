@@ -12,7 +12,7 @@ ssh root@$ip_vps << EOF
   dokku postgres:create $db_name
   dokku postgres:link $db_name $app_name
   ## import dump
-  # dokku postgres:connect db < ./dump.sql
+  # dokku postgres:import db < ./dump.sql
 
   # ### linking public/uploads storage
   # /var/lib/dokku/data/storage/app_name:/app/public/uploads

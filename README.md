@@ -115,3 +115,21 @@ SHELL=/bin/bash
 
 * * * * * /bin/bash -c 'dokku run app_name rails r AppModel.run_something'
 ```
+
+Process and Container Management
+
+```
+ps <app>                                       # List processes running in app container(s)
+ps:rebuild <app>                               # Rebuild an app from source
+ps:rebuildall                                  # Rebuild all apps from source
+ps:report [<app>] [<flag>]                     # Displays a process report for one or more apps
+ps:restart <app>                               # Restart app container(s)
+ps:restart-policy <app>                        # Shows the restart-policy for an app
+ps:restartall                                  # Restart all deployed app containers
+ps:scale <app> <proc>=<count> [<proc>=<count>] # Get/Set how many instances of a given process to run
+ps:set-restart-policy <app> <policy>           # Sets app restart-policy
+ps:start <app>                                 # Start app container(s)
+ps:startall                                    # Start all deployed app containers
+ps:stop <app>                                  # Stop app container(s)
+ps:stopall                                     # Stop all app container(s)
+```

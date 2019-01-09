@@ -11,7 +11,6 @@ git remote add dokku dokku@$ip_vps:$app_name
 # Gemfile
 echo "
 gem 'rails_12factor', group: :production
-gem 'puma'
 " >> Gemfile
 
 # config/puma.rb
